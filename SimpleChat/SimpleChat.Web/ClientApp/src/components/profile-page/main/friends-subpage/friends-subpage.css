@@ -1,0 +1,15 @@
+.profile-friends-subpage {
+	display: flex;
+	align-items: flex-start;
+}
+
+.profile-main .cssload-container {
+	align-self: start; 
+	margin-top: 80px;
+}
+
+@media (max-width:490px) {
+	.profile-friends-subpage {
+		display: block;
+	}
+}

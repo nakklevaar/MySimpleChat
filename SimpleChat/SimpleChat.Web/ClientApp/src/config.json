@@ -1,0 +1,12 @@
+{
+	"imagesPath": "https://localhost:5001/images/",
+	"authManager": {
+		"authority": "https://localhost:10001",
+		"client_id": "simpleChatJS",
+		"redirect_uri": "https://localhost:5001/callback",
+		"response_type": "code",
+		"scope": "openid profile",
+		"loadUserInfo": true,
+		"response_mode": "query"
+	}
+}

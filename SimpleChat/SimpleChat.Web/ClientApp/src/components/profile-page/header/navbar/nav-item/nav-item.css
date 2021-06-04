@@ -1,0 +1,13 @@
+.profile-header-nav__item {
+    flex: 0 1 auto;
+}
+
+.profile-header-nav__item + .profile-header-nav__item {
+    margin-left: 30px;
+}
+
+.profile-header-nav__link {
+    font-size: 15px;
+    line-height: 20px;
+    color: var(--primary-color);
+}

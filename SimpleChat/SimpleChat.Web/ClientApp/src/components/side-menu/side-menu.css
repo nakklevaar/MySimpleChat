@@ -1,0 +1,27 @@
+.side-menu {
+    flex: 0 0 220px;
+    text-align: left;
+    color: var(--side-color);
+}
+
+.main-navbar {
+    display: inline-block;
+    text-align: start;
+    position: sticky;
+    top: 80px;
+    width: 100%;
+}
+
+.side-menu:hover  {
+	border-right: 0;
+}
+
+.side-menu {
+	border-right: 1px solid rgb(215, 219, 225);
+}
+
+@media (max-width:800px) {
+    .side-menu {
+        display: none;
+    }
+}

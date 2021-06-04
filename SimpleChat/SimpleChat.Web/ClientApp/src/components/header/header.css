@@ -1,0 +1,58 @@
+header {
+    background: var(--header-color);
+    box-shadow: 0 5px 15px 0 rgba(43, 61, 86, 0.4);
+    position: fixed;
+    width: 100%;
+    z-index: 500;
+    height: 50px;
+}
+
+.header {
+    background-color: var(--header-color2);
+}
+
+.header__title {
+    font-size: 20px;
+    color: white;
+    margin-top: 7px;
+    line-height: 1.7em;
+    cursor: pointer;
+}
+
+.header__logo {
+    height: 30px;
+    margin: 10px 10px 0 0;
+    cursor: pointer;
+}
+
+.header__logo-wrapper {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.header__user-logo {
+    align-self: center;
+    margin-right: 10px ;
+}
+
+.header__user-logo img {
+    display: block;
+    border-radius: 100%;
+    object-fit: cover;
+    width: 35px;
+    height: 35px;
+}
+
+.logout-form {
+    margin-bottom: 5px;
+    align-self: center;
+}
+
+.logout {
+    appearance: none;
+    background: none;
+    border: 0;
+    outline: 0 !important;
+    cursor: pointer;
+    color:white
+}

@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/signin.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    <title>Auth</title>
+</head>
+<body>
+    <div class="root">
+        <div class="left-side">
+            <div class="wrap">
+                <div class="slider" id="slider">
+                    <div class="slider__item">
+                        <img src="/img/11.png">
+                    </div>
+                    <div class="slider__item">
+                        <img src="/img/22.png">
+                    </div>
+                    <div class="slider__item">
+                        <img src="/img/33.png">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="right-side">
+            <div class="stack-content">
+                <div class="logo">
+                    <img src="/img/logo.png">
+                </div>
+                <div class="login-block">
+                    <form asp-action="SignIn" asp-controller="Account" method="post">
+                        <div>
+                            <div class="login-block__item">
+                                <label>Username</label>
+                                <input type="text" name="login" value="test" />
+                            </div>
+                            <div class="login-block__item">
+                                <label>Password</label>
+                                <input type="password" name="password" value="test" />
+                            </div>
+                            <input type="hidden" name="returnUrl" value="@ViewBag.Url" />
+                        </div>
+                        <button>Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+    $(document).ready(() => $("#slider").slick({
+        vertical: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: false,
+        dots: true,
+        infinite: true,
+        responsive: [{
+            breakpoint: 1200,
+        }]
+    }));
+</script>
+</html>

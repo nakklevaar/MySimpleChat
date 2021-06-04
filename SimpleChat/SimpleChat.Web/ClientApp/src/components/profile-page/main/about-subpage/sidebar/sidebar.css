@@ -1,0 +1,9 @@
+.profile-about-sidebar__link b {
+	margin-right: 5px;
+}
+
+.profile-about-sidebar__link span {
+	margin-right: 8px;
+	display: inline-block;
+	width: 20px;
+}

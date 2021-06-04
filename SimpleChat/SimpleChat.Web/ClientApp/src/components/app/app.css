@@ -1,0 +1,88 @@
+:root {
+	--header-color: linear-gradient(
+		315deg,
+		rgba(59, 76, 97, 0.98) 0%,
+		rgba(43, 61, 86, 0.98) 98.94%
+	);
+	--header-color2: #304159;
+	--body-color: #f0f2f7;
+	--primary-color: #444;
+	--secondary-color: #888;
+	--thirdary-color: #041226;
+	--blue-color: #0069be;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: SegoeUI;
+	list-style: none;
+	text-decoration: none;
+	font-weight: normal;
+}
+
+html,
+body {
+	height: 100%;
+	min-height: 100%;
+	width: 100%;
+	font-size: 16px;
+	background-color: var(--body-color);
+	color: rgba(9, 22, 42, 0.8);
+}
+
+h1 {
+	-webkit-text-stroke-width: 0.2px;
+}
+
+a {
+	color: inherit;
+}
+
+b {
+	font-weight: 600;
+	-webkit-text-stroke-width: 0.2px;
+}
+
+#root {
+	height: 100%;
+}
+
+#root > .cssload-container {
+	position: absolute;
+	top: 50%;
+    left: 50%;
+}
+
+.container {
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 0 15px;
+	display: flex;
+	min-height: 100%;
+	min-width: 450px;
+}
+
+.main {
+	display: flex;
+	min-height: 100%;
+	padding-top: 80px;
+}
+
+.main > .cssload-container {
+    margin-top: -150px;
+}
+
+.module {
+	background: #ffffff;
+	border: 1px solid #d7dbe1;
+}
+
+.module-header {
+	border-bottom: 1px solid #d7dbe1;
+	padding: 8px 15px 10px;
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 20px;
+}

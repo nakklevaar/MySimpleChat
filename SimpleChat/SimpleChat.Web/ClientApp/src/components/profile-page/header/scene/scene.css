@@ -1,0 +1,45 @@
+.profile-header__cover {
+    background-image: url(https://demo.joomlashine.com/joomla-templates/jsn_ultranet/pro/media/com_easysocial/photos/27/86/photo-1507041837439-6fc87784cb68_large.jpg);
+    background-position: 0% 38.79171266027%;
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+}
+
+.profile-header__card {
+    margin-left: 200px;
+    padding: 16px 20px 28px;
+    min-height: 98px;
+    position: relative;
+}
+
+.profile-header__avatar {
+    position: absolute;
+    left: -85px;
+    bottom: 30px;
+    transform: translateX(-50%);
+    width: 170px;
+    height: 170px;
+    border: 4px solid #fff;
+}
+
+.profile-header__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-header__title {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: -1px;
+}
+
+.profile-header__status {
+    color: var(--secondary-color);
+    font-size: 15px;
+    line-height: 20px;
+    margin-top: 3px;
+}

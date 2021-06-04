@@ -1,0 +1,14 @@
+.message-item {
+    margin-bottom: 10px;
+}
+
+.message-item__text {
+    font-size: 16px;
+    line-height: 24px;
+    color: #041226;
+    overflow-wrap: anywhere;
+}
+
+.not-read {
+    background-color: rgb(201 222 247 / 30%);
+}

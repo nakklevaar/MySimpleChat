@@ -1,0 +1,32 @@
+.side-block {
+    position: sticky;
+    top: 130px;
+    width: 220px;
+}
+
+.side-block + .side-block {
+    top:500px
+}
+
+.side-block__title {
+    margin-bottom: 8px;
+}
+
+.side-block__outer {
+    padding:8px;
+}
+
+.side-block__inner {
+    height: 200px;
+    position: relative;
+    box-shadow: -47px -10px 100px 0px rgb(34 60 80 / 20%) inset;
+}
+
+.side-block__content {
+    font-size: 50px;
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    color: #a0c3e2;
+    cursor: default;
+}

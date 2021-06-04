@@ -1,0 +1,5 @@
+.chats-page-main {
+    min-height: calc(100% - 88px);
+    display: flex;
+    position: relative;
+}

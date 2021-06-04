@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleChat.Web", "SimpleChat.Web\SimpleChat.Web.csproj", "{5B49112A-2D96-45AB-B186-D8A3E57C676A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleChat.Infrustructure", "SimpleChat.Infrustructure\SimpleChat.Infrustructure.csproj", "{5EC217ED-5519-4445-AB83-936C69699720}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleChat.Core", "SimpleChat.Core\SimpleChat.Core.csproj", "{CEFF8517-DA1F-4F35-9A9B-76179C256CD8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleChat.Application", "SimpleChat.Application\SimpleChat.Application.csproj", "{3535C65D-ACD0-4A38-8BA8-5EF5267FB218}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleChat.AuthorizationServer", "SimpleChat.AuthorizationServer\SimpleChat.AuthorizationServer.csproj", "{B73A33F8-DD24-4AC2-B22C-D54C712E0148}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B64A8792-8A38-4551-8118-127642A9513C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B49112A-2D96-45AB-B186-D8A3E57C676A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B49112A-2D96-45AB-B186-D8A3E57C676A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B49112A-2D96-45AB-B186-D8A3E57C676A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B49112A-2D96-45AB-B186-D8A3E57C676A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EC217ED-5519-4445-AB83-936C69699720}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EC217ED-5519-4445-AB83-936C69699720}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EC217ED-5519-4445-AB83-936C69699720}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EC217ED-5519-4445-AB83-936C69699720}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEFF8517-DA1F-4F35-9A9B-76179C256CD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEFF8517-DA1F-4F35-9A9B-76179C256CD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEFF8517-DA1F-4F35-9A9B-76179C256CD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEFF8517-DA1F-4F35-9A9B-76179C256CD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3535C65D-ACD0-4A38-8BA8-5EF5267FB218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3535C65D-ACD0-4A38-8BA8-5EF5267FB218}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3535C65D-ACD0-4A38-8BA8-5EF5267FB218}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3535C65D-ACD0-4A38-8BA8-5EF5267FB218}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B73A33F8-DD24-4AC2-B22C-D54C712E0148}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B73A33F8-DD24-4AC2-B22C-D54C712E0148}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B73A33F8-DD24-4AC2-B22C-D54C712E0148}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B73A33F8-DD24-4AC2-B22C-D54C712E0148}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {491075CA-3D85-4C54-86AA-8B407707E4E8}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,9 @@
+.profile-about-content {
+  flex: 1 1 auto;
+}
+
+.profile-about-subpage .cssload-container {
+  margin-left: -20px;
+  align-self: start; 
+  margin-top: 80px;
+}

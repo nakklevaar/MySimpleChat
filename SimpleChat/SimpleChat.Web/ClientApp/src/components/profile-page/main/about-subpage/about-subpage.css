@@ -1,0 +1,11 @@
+.profile-about-subpage {
+	display: flex;
+	align-items: flex-start;
+}
+
+
+@media (max-width:490px) {
+	.profile-about-subpage {
+		display: block;
+	}
+}

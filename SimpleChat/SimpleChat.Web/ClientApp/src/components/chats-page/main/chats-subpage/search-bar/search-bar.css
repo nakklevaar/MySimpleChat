@@ -1,0 +1,46 @@
+.chats-search-bar {
+    border: 1px solid #e1e1e1;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 16px;
+    border-color: #d7dbe1;
+    background: #ffffff;
+    font-size: 15px;
+    color: #041226;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 20px;
+    position: sticky;
+    top: 168px;
+    z-index: 100;
+    display: flex;
+}
+
+.chats-search-bar__input {
+    border:0;
+    outline: 0 !important;
+    font-size: 14px;
+    line-height: 20px;
+    width: 100%;
+}
+
+.chats-search-bar__input.empty{
+    color:#b8b8b8;
+}
+
+.chats-search-bar__icon {
+    width: 30px;
+    line-height: 20px;
+    color:#adbad4
+}
+
+.chats-search-bar__clear-button{
+    appearance: none;
+    background: none;
+    border:0;
+    outline: 0 !important;
+    font-size: 18px;
+    width: 30px;
+    cursor: pointer;
+    color:#adbad4;
+}

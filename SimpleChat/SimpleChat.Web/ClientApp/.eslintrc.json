@@ -1,0 +1,80 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+    "overrides": [
+        // typescript
+        {
+            "files": [
+                "*.ts",
+                "*.tsx"
+            ],
+            "plugins": [
+                "react",
+                "@typescript-eslint"
+            ],
+            "extends": [
+                "eslint:recommended",
+                "plugin:react/recommended",
+                "plugin:@typescript-eslint/recommended"
+            ],
+            "parser": "@typescript-eslint/parser",
+            "rules": {
+                "semi": "off",
+                "@typescript-eslint/semi": [
+                    "error"
+                ],
+                "quotes": [
+                    2,
+                    "double"
+                ],
+                "@typescript-eslint/no-explicit-any": "off",
+                "@typescript-eslint/explicit-module-boundary-types": [
+                    "off"
+                ],
+                "comma-dangle": [
+                    "error",
+                    {
+                        "arrays": "never",
+                        "objects": "never",
+                        "imports": "never",
+                        "exports": "never",
+                        "functions": "never"
+                    }
+                ],
+                "@typescript-eslint/member-delimiter-style": [
+                    "error",
+                    {
+                        "multiline": {
+                            "delimiter": "semi",
+                            "requireLast": true
+                        },
+                        "singleline": {
+                            "delimiter": "semi",
+                            "requireLast": false
+                        }
+                    }
+                ],
+                "react/react-in-jsx-scope": [
+                    "off"
+                ],
+                "react/display-name": [
+                    "off"
+                ]
+            }
+        }
+    ]
+}

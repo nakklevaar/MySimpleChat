@@ -1,0 +1,48 @@
+.chat-last-message {
+    margin-top: 5px;
+    margin-left: 7px;
+}
+
+.chat-last-message__preview {
+    display: flex;
+    margin-bottom: 2px;
+}
+
+.chat-last-message__text {
+    font-size: 15px;
+    display: inline-block;
+    font-weight: 600;
+    line-height: 28px;
+    color: #041226;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.chat-last-message__info {
+    font-size: 12px;
+}
+
+.chat-last-message__info span {
+    color: rgba(4, 18, 38, 0.6);
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.chat-last-message__info span + span:before {
+    content: ".";
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 5px;
+    margin: 0 5px;
+    vertical-align: top;
+}
+
+.chat-last-message__peer-photo {
+    display: block;
+    border-radius: 100%;
+    object-fit: cover;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}

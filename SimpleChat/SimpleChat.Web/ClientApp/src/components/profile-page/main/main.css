@@ -1,0 +1,22 @@
+.profile-sidebar {
+	flex: 0 0 240px;
+	margin-right: 20px;
+	color: var(--thirdary-color);
+}
+
+.profile-sidebar-body {
+	padding: 15px;
+}
+
+.profile-sidebar-nav {
+	font-size: 16px;
+	line-height: 1.5em;
+}
+
+
+@media (max-width:490px) {
+	.profile-sidebar {
+		margin-right: 0px;
+		margin-bottom: 10px;
+	}
+}
