@@ -30,7 +30,7 @@ class SearchListContainer extends Component<IContainerProps> {
         const rootNode = <SearchList searchList={this.props.searchList.data} />;
         const node = this.props.searchList.status === StateStatus.Loaded || this.props.searchList.status === StateStatus.CompletelyLoaded;
         return <div className="chats-list-wrap">
-            <BlurredLoading className="blurred" render={rootNode} show={node} />;
+            <BlurredLoading className="blurred" render={rootNode} show={node} />
         </div>;
     }
 }

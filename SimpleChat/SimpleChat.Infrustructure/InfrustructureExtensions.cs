@@ -41,7 +41,7 @@ namespace SimpleChat.Infrustructure
             services
                 .AddDbContext<IdentityContext>(options =>
                 {
-                options.UseSqlServer(configuration["Data:connectionString"]);
+                    options.UseSqlServer(configuration["Data:connectionString"]);
                 });
 
             services

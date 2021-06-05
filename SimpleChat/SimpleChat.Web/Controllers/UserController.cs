@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SimpleChat.Application.Features.Users;
 
@@ -7,6 +8,7 @@ namespace SimpleChat.Web.Controllers
 {
     [Route("api/users/")]
     [ApiController]
+    [Authorize("token")]
     public class UserController : ControllerBase
     {
         private readonly IMediator _mediator;

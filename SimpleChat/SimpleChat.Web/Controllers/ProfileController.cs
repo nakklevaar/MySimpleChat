@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SimpleChat.Application.Features.Profiles;
 
@@ -7,6 +8,7 @@ namespace SimpleChat.Web.Controllers
 {
     [Route("api/profile/")]
     [ApiController]
+    [Authorize("token")]
     public class ProfileController : ControllerBase
     {
         private readonly IMediator _mediator;

@@ -97,7 +97,7 @@ namespace SimpleChat.Web
                         policy.RequireAuthenticatedUser();
                     });
 
-                    options.AddPolicy("callback", policy =>
+                    options.AddPolicy("cookie", policy =>
                     {
                         policy.AddAuthenticationSchemes(CookieAuthenticationDefaults.AuthenticationScheme);
                         policy.RequireAuthenticatedUser();
@@ -105,7 +105,8 @@ namespace SimpleChat.Web
                 });
 
             services
-                .AddControllersWithViews().AddRazorRuntimeCompilation()
+                .AddControllersWithViews()
+                .AddRazorRuntimeCompilation()
                 .AddNewtonsoftJson();
 
             services.
@@ -128,31 +129,18 @@ namespace SimpleChat.Web
                 IdentityModelEventSource.ShowPII = true;
             }
 
-            app.UseCors(x => x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
-
             app.UseAuthentication();
             app.UseStaticFiles();
             app.UseRouting();
-
             app.UseAuthorization();
-
-            app.Use(async (context, next) =>
-            {
-                if (!context.User.Identity.IsAuthenticated && !context.Request.Headers.Values.Contains("application/json"))
-                {
-                    await context.ChallengeAsync(OpenIdConnectDefaults.AuthenticationScheme);
-                }
-                else
-                {
-                    await next();
-                }
-            });
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapHub<ChatHub>("/chathub");
-                endpoints.MapControllers().RequireAuthorization("callback","token");
+                endpoints.MapControllers();
             });
+
+            app.Use(async (context, next) => await (!context.User.Identity.IsAuthenticated ? context.ChallengeAsync() : next()));
 
             app.UseSpa(spa =>
             {

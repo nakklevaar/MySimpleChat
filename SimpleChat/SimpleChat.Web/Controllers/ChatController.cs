@@ -11,6 +11,7 @@ namespace SimpleChat.Web.Controllers
 {
     [Route("api/chats")]
     [ApiController]
+    [Authorize("token")]
     public class ChatController : ControllerBase
     {
         private readonly IMediator _mediator;
