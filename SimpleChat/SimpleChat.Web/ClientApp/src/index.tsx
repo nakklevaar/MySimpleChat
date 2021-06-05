@@ -9,7 +9,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import SignalRService from "services/signalr-service";
 import store from "./store";
 
-const authService = new AuthService();
+export const authService = new AuthService();
 const apiService = new ApiService(authService);
 const signalRService = new SignalRService(store.dispatch);
 

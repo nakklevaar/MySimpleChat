@@ -40,6 +40,10 @@
     display: flex;
 }
 
+.chat-item__content {
+    flex: 1 1 auto;
+}
+
 .chat-item__title {
     font-size: 17px;
     margin: 0;

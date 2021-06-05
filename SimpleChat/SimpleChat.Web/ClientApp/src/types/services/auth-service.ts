@@ -10,4 +10,6 @@ export interface IAuthService {
     getUser: () => Promise<User | null>;
 
     signinSilent: () => Promise<User>;
+
+    removeUser: () => Promise<void>;
 }

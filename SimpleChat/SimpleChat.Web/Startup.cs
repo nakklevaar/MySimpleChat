@@ -41,7 +41,7 @@ namespace SimpleChat.Web
                 .AddAuthentication(options =>
                 {
                     options.DefaultScheme = "Cookies";
-                    options.DefaultChallengeScheme = "oidc";
+                    options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
                 })
                 .AddJwtBearer(opt =>
                 {
@@ -140,7 +140,8 @@ namespace SimpleChat.Web
                 endpoints.MapControllers();
             });
 
-            app.Use(async (context, next) => await (!context.User.Identity.IsAuthenticated ? context.ChallengeAsync() : next()));
+            app.Use(async (context, next) => 
+                await (!context.User.Identity.IsAuthenticated ? context.ChallengeAsync() : next()));
 
             app.UseSpa(spa =>
             {

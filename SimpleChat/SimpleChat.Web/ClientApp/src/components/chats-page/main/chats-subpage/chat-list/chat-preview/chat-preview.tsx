@@ -2,18 +2,22 @@ import "./chat-preview.css";
 
 import Content from "./content";
 import { IChat } from "types/state/chats-page";
+import { IState } from "types/state";
 import { Link } from "react-router-dom";
 import config from "config";
+import { connect } from "react-redux";
+import { getOwnId } from "selectors/chats-page";
 
 interface IProps {
     chat: IChat;
+    userId: string;
     saveY: () => void;
 }
 
-const ChatPreview = ({ chat, saveY }: IProps) => {
+const ChatPreview = ({ chat, saveY, userId }: IProps) => {
     const imgUrl = `${config.imagesPath}${chat.imageSource}`;
     const lastMessage = chat.messages.data[0] || chat.lastMessage;
-    const isRead = lastMessage.isRead ? null : "not-read";
+    const isRead = !lastMessage.isRead && lastMessage.sender.id !== userId ? "unread" : null;
     return (
         <li className="chats-list__item-wrap" onClick={saveY}>
             <Link to={`/chats/${chat.id}`} className="chat-list__item-link">
@@ -32,4 +36,8 @@ const ChatPreview = ({ chat, saveY }: IProps) => {
     );
 };
 
-export default ChatPreview;
+const mapStateToProps = (state: IState) => ({
+    userId: getOwnId(state)
+});
+
+export default connect(mapStateToProps)(ChatPreview);

@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using IdentityServer4;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -43,7 +44,8 @@ namespace SimpleChat.AuthorizationServer.Controllers
         [HttpGet("/account/logout")]
         public async Task<IActionResult> Logout(string logoutId)
         {
-            await HttpContext.SignOutAsync();
+            await HttpContext.SignOutAsync("Identity.Application");
+            await HttpContext.SignOutAsync(IdentityServerConstants.DefaultCookieAuthenticationScheme);
             return RedirectToAction("SignIn");
         }
     }

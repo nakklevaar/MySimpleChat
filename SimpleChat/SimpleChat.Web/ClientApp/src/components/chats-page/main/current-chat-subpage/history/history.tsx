@@ -58,7 +58,7 @@ const fillArrayUnreaded = (sendCommand: (ids: number[]) => void, userId: string)
     setTimeout(() => {
         for (let i = 0; i < count; i++) {
             const mes = document.getElementsByClassName("message-item")[i] as HTMLElement;
-            if (mes.offsetTop >= window.scrollY - 30 && mes.className.includes("not-read") && mes.getAttribute("data-sender") != userId) {
+            if (mes.offsetTop >= window.scrollY - 30 && mes.className.includes("unread") && mes.getAttribute("data-sender") != userId) {
                 unRead.push(+(mes.getAttribute("data-id") as string));
             }
         }

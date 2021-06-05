@@ -7,7 +7,7 @@ interface IProps {
 }
 
 const MessageItem = ({ message }: IProps) => {
-    const isRead = message.isRead ? null : "not-read";
+    const isRead = message.isRead ? null : "unread";
     return (
         <li className={`message-item ${isRead}`} data-id={message.id} data-sender={message.sender.id}>
             <div className="message-item__text">{message.content}</div>

@@ -34,4 +34,6 @@ export default class AuthService implements IAuthService {
     signinSilent = () => this.userManager.signinSilent();
 
     signOut = () => this.userManager.signoutRedirect();
+
+    removeUser = () => this.userManager.removeUser();
 }

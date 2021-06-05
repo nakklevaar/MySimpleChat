@@ -3,9 +3,19 @@ import "./header.css";
 import { IState, IUser } from "types/state";
 
 import { Link } from "react-router-dom";
+import React from "react";
+import { authService } from "index";
 import config from "config";
 import { connect } from "react-redux";
 import img from "./logo.png";
+
+const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await authService.removeUser();
+    formRef.current?.submit();
+};
+
+const formRef = React.createRef<HTMLFormElement>();
 
 interface IProps {
     userInfo: IUser;
@@ -25,7 +35,7 @@ const Header = ({ userInfo }: IProps) => {
                         <img src={imgUrl} />
                     </Link>
                 </div>
-                <form action="/logout?returnurl=1234" className="logout-form">
+                <form action="/logout" className="logout-form" ref={formRef} onSubmit={onSubmit}>
                     <button className="logout">Log out</button>
                 </form>
             </div>
