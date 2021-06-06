@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Specialized;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
@@ -70,13 +71,9 @@ namespace SimpleChat.Web
                         ValidateAudience = false,
                         NameClaimType = ClaimTypes.NameIdentifier
                     };
+                    options.SaveTokens = true;
                     options.Events = new OpenIdConnectEvents
                     {
-                        OnRedirectToIdentityProvider = context =>
-                        {
-                            context.Properties.RedirectUri = context.Request.Path;
-                            return Task.CompletedTask;
-                        },
                         OnTicketReceived = context =>
                         {
                             context.Properties.IsPersistent = true;
