@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using SimpleChat.Core.Constants.Validation;
 using SimpleChat.Core;
 
 namespace SimpleChat.Data.Data.Configurations
@@ -10,20 +11,22 @@ namespace SimpleChat.Data.Data.Configurations
         {
             builder
                 .Property(e => e.Id)
-                .HasMaxLength(15)
+                .HasMaxLength(LengthValidation.User.Id)
                 .IsUnicode(false);
 
-            //builder
-            //    .Property(e => e.FirstName)
-            //    .IsRequired()
-            //    .HasMaxLength(20);
+            builder
+                .Property(e => e.FirstName)
+                .IsRequired()
+                .HasMaxLength(LengthValidation.User.FirstName);
 
-            //builder
-            //    .Property(e => e.LastName)
-            //    .IsRequired()
-            //    .HasMaxLength(20);
+            builder
+                .Property(e => e.LastName)
+                .IsRequired()
+                .HasMaxLength(LengthValidation.User.LastName);
 
-
+            builder
+                .Property(e => e.IsMale)
+                .IsRequired();
         }
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -9,6 +6,7 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using SimpleChat.Application.Dtos;
+using SimpleChat.Application.Features.ViewModels.Chats;
 using SimpleChat.Application.Interfaces;
 using SimpleChat.Core;
 

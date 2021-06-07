@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Features\Users\Commands\**" />
+    <EmbeddedResource Remove="Features\Users\Commands\**" />
+    <None Remove="Features\Users\Commands\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Features\Chats\Queries\GetChat\GetChatByIdHandler.cs~RFfa260f2.TMP" />
   </ItemGroup>
 
@@ -22,7 +28,6 @@
 
   <ItemGroup>
     <Folder Include="Features\Friends\" />
-    <Folder Include="Features\Users\Commands\" />
   </ItemGroup>
 
 </Project>

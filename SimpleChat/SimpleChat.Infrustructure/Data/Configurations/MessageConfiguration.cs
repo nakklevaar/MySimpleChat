@@ -12,16 +12,20 @@ namespace SimpleChat.Data.Data.Configurations
                 .Property(e => e.CreateDate)
                 .HasColumnType("datetime")
                 .IsRequired();
+
             builder
                 .Property(e => e.Content)
                 .IsRequired();
+
             builder
                 .Property(e => e.IsRead)
                 .IsRequired();
+
             builder
                 .Property(e => e.SenderId)
                 .IsRequired()
                 .IsUnicode(false);
+
             builder
                 .Property(e => e.ChatId)
                 .IsRequired();

@@ -1,4 +1,4 @@
-﻿namespace SimpleChat.Application.Features.Chats
+﻿namespace SimpleChat.Application.Features.ViewModels.Chats
 {
     public class LightChatVm
     {

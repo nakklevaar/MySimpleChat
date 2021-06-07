@@ -1,6 +1,6 @@
 ﻿using SimpleChat.Application.Dtos;
 
-namespace SimpleChat.Application.Features.Chats
+namespace SimpleChat.Application.Features.ViewModels.Chats
 {
     public class GroupChatVm : ChatVm
     {

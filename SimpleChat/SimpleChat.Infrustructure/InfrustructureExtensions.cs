@@ -36,12 +36,12 @@ namespace SimpleChat.Infrustructure
             return services;
         }
 
-        public static IServiceCollection AddAuthServer(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddAuthServer(this IServiceCollection services)
         {
             services
                 .AddDbContext<IdentityContext>(options =>
                 {
-                    options.UseSqlServer(configuration["Data:connectionString"]);
+                    options.UseInMemoryDatabase("AuthStore");
                 });
 
             services

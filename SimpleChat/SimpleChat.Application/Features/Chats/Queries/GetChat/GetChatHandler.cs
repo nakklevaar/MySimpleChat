@@ -6,6 +6,7 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using SimpleChat.Application.Dtos;
+using SimpleChat.Application.Features.ViewModels.Chats;
 using SimpleChat.Application.Interfaces;
 using SimpleChat.Core;
 

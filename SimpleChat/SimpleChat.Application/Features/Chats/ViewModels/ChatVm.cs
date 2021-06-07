@@ -1,7 +1,7 @@
 ﻿using SimpleChat.Application.Dtos;
 using SimpleChat.Core;
 
-namespace SimpleChat.Application.Features.Chats
+namespace SimpleChat.Application.Features.ViewModels.Chats
 {
     public abstract class ChatVm
     {

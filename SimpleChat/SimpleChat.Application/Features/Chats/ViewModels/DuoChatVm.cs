@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SimpleChat.Application.Dtos;
+﻿using SimpleChat.Application.Dtos;
 
-namespace SimpleChat.Application.Features.Chats
+namespace SimpleChat.Application.Features.ViewModels.Chats
 {
     public class DuoChatVm : ChatVm
     {

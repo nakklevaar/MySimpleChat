@@ -4,8 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using SimpleChat.Application.Interfaces;
+using SimpleChat.Infrustructure;
 
 namespace SimpleChat.Web
 {
@@ -13,7 +16,12 @@ namespace SimpleChat.Web
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
+            using var scope = host.Services.CreateScope();
+            var dbcontext = scope.ServiceProvider.GetRequiredService<ISimpleChatStorageContext>();
+            var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+            dbcontext.InitializeDb(logger);
+            host.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

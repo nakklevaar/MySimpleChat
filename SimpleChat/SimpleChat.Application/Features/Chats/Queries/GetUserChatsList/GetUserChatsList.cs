@@ -8,6 +8,7 @@ using SimpleChat.Application.Interfaces;
 using SimpleChat.Core;
 using Microsoft.AspNetCore.Http;
 using SimpleChat.Application.Dtos;
+using SimpleChat.Application.Features.ViewModels.Chats;
 
 namespace SimpleChat.Application.Features.Chats
 {

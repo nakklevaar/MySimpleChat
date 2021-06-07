@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using SimpleChat.Core.Constants.Validation;
 using SimpleChat.Core;
 
 namespace SimpleChat.Data.Data.Configurations
@@ -12,16 +13,20 @@ namespace SimpleChat.Data.Data.Configurations
             builder
                 .Property(e => e.Name)
                 .IsUnicode(true)
-                .HasMaxLength(30);
+                .HasMaxLength(LengthValidation.Chat.Name);
 
             var converter = new ValueConverter<ChatType, bool>(
-        v => v == ChatType.Duo ? false : true,
-        v => v == false ? ChatType.Duo : ChatType.Group);
+                v => v == ChatType.Duo ? false : true,
+                v => v == false ? ChatType.Duo : ChatType.Group);
 
             builder
                 .Property(e => e.ChatType)
                 .IsRequired()
                 .HasConversion(converter);
+
+            builder
+                .Property(e => e.CreatorId)
+                .IsRequired();
         }
     }
 }

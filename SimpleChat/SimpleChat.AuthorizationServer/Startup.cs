@@ -22,7 +22,7 @@ namespace SimpleChat.AuthorizationServer
         {
             services
                 .AddInfrustructure()
-                .AddAuthServer(Configuration);
+                .AddAuthServer();
 
             services.AddControllersWithViews();
         }

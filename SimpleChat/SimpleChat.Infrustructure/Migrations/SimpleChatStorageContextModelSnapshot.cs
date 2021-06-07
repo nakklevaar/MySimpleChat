@@ -16,7 +16,7 @@ namespace SimpleChat.Infrustructure.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.5")
+                .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("SimpleChat.Core.Chat", b =>
@@ -26,19 +26,20 @@ namespace SimpleChat.Infrustructure.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ChatType")
-                        .HasColumnType("int");
+                    b.Property<bool>("ChatType")
+                        .HasColumnType("bit");
 
                     b.Property<string>("CreatorId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageSource")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(30)
+                        .HasMaxLength(20)
                         .IsUnicode(true)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("Id");
 
@@ -129,8 +130,8 @@ namespace SimpleChat.Infrustructure.Migrations
                     b.Property<string>("ImageSource")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("IsMale")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("IsMale")
+                        .HasColumnType("bit");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -150,10 +151,10 @@ namespace SimpleChat.Infrustructure.Migrations
                     b.Property<DateTime>("Birthday")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Phone")
+                    b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("WorkPlace")
+                    b.Property<string>("Country")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

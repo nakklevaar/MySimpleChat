@@ -10,9 +10,5 @@ namespace SimpleChat.Web.Hubs
 {
     public class ChatHub: Hub
     {
-        public async Task Send(string message)
-        {
-            
-        }
     }
 }
