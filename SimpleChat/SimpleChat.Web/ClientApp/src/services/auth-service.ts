@@ -1,7 +1,5 @@
 import { User, UserManager } from "oidc-client";
-
 import { IAuthService } from "types/services/auth-service";
-import config from "config";
 
 const config1 = {
     authority: "https://localhost:10001",

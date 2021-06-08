@@ -1,13 +1,12 @@
 import "./search-bar.css";
 
-import { Dispatch, bindActionCreators } from "redux";
-import React, { Component } from "react";
 import { clearSearchList, fetchChatSearch } from "actions/chats-page";
-
-import IApiService from "types/services/api-service";
-import { IFetchChatSeach } from "types/actions/chats-page";
-import { connect } from "react-redux";
 import { withApiService } from "components/hoc";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators, Dispatch } from "redux";
+import { IFetchChatSeach } from "types/actions/chats-page";
+import IApiService from "types/services/api-service";
 
 interface IProps {
     fetchChatSearch: IFetchChatSeach;

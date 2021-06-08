@@ -1,8 +1,9 @@
-import IApiService from "types/services/api-service";
-import { IChatPage } from "./chats-page";
-import { ICurrentUser } from "./user";
-import { IProfilePage } from "./profile-page";
 import { RouteComponentProps } from "react-router";
+import IApiService from "types/services/api-service";
+
+import { IChatPage } from "./chats-page";
+import { IProfilePage } from "./profile-page";
+import { ICurrentUser } from "./user";
 
 export interface IState {
     user: ICurrentUser;

@@ -1,6 +1,5 @@
-import { IAction, IState } from "types/state";
 import { USER_AUTH_DETAILS_SUCCESS, USER_INFO_LOADED, UserAuthActions } from "types/actions/user";
-
+import { IState } from "types/state";
 import { ICurrentUser } from "types/state/user";
 
 const initial = {

@@ -1,6 +1,6 @@
+import { User } from "oidc-client";
 import { IAction, IUser } from "types/state";
 
-import { User } from "oidc-client";
 import { IThunkAction } from ".";
 
 export const USER_AUTH_DETAILS_SUCCESS = "USER_AUTH_DETAILS_SUCCESS";

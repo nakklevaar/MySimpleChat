@@ -1,12 +1,12 @@
 import "./side-menu.css";
 
 import React, { Component } from "react";
-import { RouteComponentProps, match, withRouter } from "react-router-dom";
-
-import { IState } from "types/state";
-import NavItem from "./nav-item";
 import { connect } from "react-redux";
+import { RouteComponentProps, withRouter } from "react-router-dom";
 import { getOwnId } from "selectors/chats-page";
+import { IState } from "types/state";
+
+import NavItem from "./nav-item";
 
 interface IProps {
 	id: string;

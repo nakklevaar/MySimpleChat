@@ -1,12 +1,12 @@
 import "./header.css";
 
+import config from "config";
+import { authService } from "index";
+import React from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { IState, IUser } from "types/state";
 
-import { Link } from "react-router-dom";
-import React from "react";
-import { authService } from "index";
-import config from "config";
-import { connect } from "react-redux";
 import img from "./logo.png";
 
 const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

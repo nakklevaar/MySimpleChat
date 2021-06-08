@@ -1,8 +1,7 @@
 import { IAction, IUser } from "types/state";
-
 import { IAbout } from "types/state/profile-page";
+
 import { IThunkAction } from ".";
-import { String } from "lodash";
 
 // About
 

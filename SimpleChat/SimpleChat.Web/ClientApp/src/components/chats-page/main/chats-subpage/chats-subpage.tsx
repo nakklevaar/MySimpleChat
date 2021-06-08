@@ -1,23 +1,19 @@
 import "./chats-subpage.css";
 
-import { Dispatch, bindActionCreators } from "redux";
-import { IAction, IRequestable, IState, StateStatus } from "types/state";
-import { IChat, ISearchTemplate } from "types/state/chats-page";
-import React, { Component, ReactChild, ReactNode, useEffect } from "react";
-import { getChatList, getSearchList } from "selectors/chats-page";
-
-import BlurredLoading from "../blurred-loading";
-import ChatList from "./chat-list";
-import ChatPreview from "./chat-list/chat-preview";
-import IApiService from "types/services/api-service";
-import { IFetchChats } from "types/actions/chats-page";
-import Loading from "components/loading";
-import SearchBar from "./search-bar";
-import SearchList from "./search-list";
-import { ThunkAction } from "redux-thunk";
-import { connect } from "react-redux";
 import { fetchChats } from "actions/chats-page";
 import { withApiService } from "components/hoc";
+import { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators, Dispatch } from "redux";
+import { getChatList, getSearchList } from "selectors/chats-page";
+import { IFetchChats } from "types/actions/chats-page";
+import IApiService from "types/services/api-service";
+import { IRequestable, IState, StateStatus } from "types/state";
+import { IChat, ISearchTemplate } from "types/state/chats-page";
+
+import ChatList from "./chat-list";
+import SearchBar from "./search-bar";
+import SearchList from "./search-list";
 
 const SubcribeOnScroll = (func: IFetchChats) => {
     window.onscroll = function () {

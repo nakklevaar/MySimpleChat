@@ -1,16 +1,14 @@
 import "./input.css";
 
-import { DefaultPropsTuple, IState } from "types/state";
-import { Dispatch, bindActionCreators } from "redux";
-import { IPostFetchChatMessages, ISendMessage } from "types/actions/chats-page";
-import React, { Component } from "react";
-
-import { connect } from "react-redux";
-import { getOwnId } from "selectors/chats-page";
-import { getUser } from "selectors/profile-page";
 import { postFetchChatMessage } from "actions/chats-page";
 import { withApiService } from "components/hoc";
+import React, { Component } from "react";
+import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+import { bindActionCreators, Dispatch } from "redux";
+import { getOwnId } from "selectors/chats-page";
+import { IPostFetchChatMessages, ISendMessage } from "types/actions/chats-page";
+import { DefaultPropsTuple, IState } from "types/state";
 
 interface IProps {
     id: number;

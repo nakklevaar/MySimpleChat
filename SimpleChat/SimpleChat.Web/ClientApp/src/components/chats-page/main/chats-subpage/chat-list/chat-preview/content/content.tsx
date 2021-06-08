@@ -1,12 +1,10 @@
 import "./content.css";
 
-import { ChatType, IChat, IDuoChat } from "types/state/chats-page";
-
-import { ICurrentUser } from "types/state/user";
-import { IState } from "types/state";
 import config from "config";
 import { connect } from "react-redux";
-import { getOwnId } from "selectors/chats-page";
+import { IState } from "types/state";
+import { IChat } from "types/state/chats-page";
+import { ICurrentUser } from "types/state/user";
 import { normalizeDate } from "utils";
 
 interface IProps {

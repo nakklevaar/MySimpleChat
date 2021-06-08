@@ -1,3 +1,4 @@
+import { getAbout, getFriends, getUser } from "selectors/profile-page";
 import {
     FETCH_PROFILE_ABOUT_FAILURE,
     FETCH_PROFILE_ABOUT_REQUEST,
@@ -10,11 +11,9 @@ import {
     FETCH_PROFILE_USER_SUCCESS,
     ProfileAboutActions,
     ProfileFriendsActions,
-    ProfileUserActions
+    ProfileUserActions,
 } from "types/actions/profile-page";
 import { IAction, IState, StateStatus } from "types/state";
-import { getAbout, getFriends, getUser } from "selectors/profile-page";
-
 import { IProfilePage } from "types/state/profile-page";
 
 const initial: IProfilePage = {

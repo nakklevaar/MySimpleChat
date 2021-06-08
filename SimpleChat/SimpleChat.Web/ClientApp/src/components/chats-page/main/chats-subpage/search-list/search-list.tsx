@@ -1,13 +1,13 @@
 import "./search-list.css";
 
-import { IRequestable, IState, StateStatus } from "types/state";
-
-import BlurredLoading from "../../blurred-loading";
 import { Component } from "react";
-import { ISearchTemplate } from "types/state/chats-page";
-import LightChatPreview from "./light-chat-preview";
 import { connect } from "react-redux";
 import { getSearchList } from "selectors/chats-page";
+import { IRequestable, IState, StateStatus } from "types/state";
+import { ISearchTemplate } from "types/state/chats-page";
+
+import BlurredLoading from "../../blurred-loading";
+import LightChatPreview from "./light-chat-preview";
 
 interface IProps {
     searchList: ISearchTemplate[];

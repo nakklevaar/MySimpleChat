@@ -1,4 +1,4 @@
-import { IRequestable, IState } from "types/state";
+import { IState } from "types/state";
 
 export const getChatList = (state: IState) => state.chatsPage.chatList;
 

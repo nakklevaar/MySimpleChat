@@ -1,20 +1,20 @@
 import "./profile-page.css";
 
+import { fetchUser } from "actions/profile-page";
+import { withApiService } from "components/hoc";
+import Loading from "components/loading";
+import PageLayout from "components/page-layout";
+import { Component } from "react";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import { bindActionCreators } from "redux";
+import { getUser } from "selectors/profile-page";
+import { IThunkDispatch } from "types/actions";
+import { IFetchProfile } from "types/actions/profile-page";
 import { DefaultPropsTuple, IRequestable, IState, IUser, StateStatus } from "types/state";
 
-import { Component } from "react";
 import Header from "./header";
-import { IFetchProfile } from "types/actions/profile-page";
-import { IThunkDispatch } from "types/actions";
-import Loading from "components/loading";
 import Main from "./main";
-import PageLayout from "components/page-layout";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import { fetchUser } from "actions/profile-page";
-import { getUser } from "selectors/profile-page";
-import { withApiService } from "components/hoc";
-import { withRouter } from "react-router-dom";
 
 const ProfilePage = () => {
     return (

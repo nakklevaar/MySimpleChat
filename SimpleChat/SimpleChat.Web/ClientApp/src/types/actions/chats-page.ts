@@ -1,9 +1,7 @@
-import { IAction, IState, IUser } from "types/state";
+import { IAction, IUser } from "types/state";
 import { IChat, IMessage, ISearchTemplate } from "types/state/chats-page";
 
 import { IThunkAction } from ".";
-import { String } from "lodash";
-import { ThunkAction } from "redux-thunk";
 
 export const FETCH_CHATS_REQUEST = "FETCH_CHATS_REQUEST";
 export const FETCH_CHATS_SUCCESS = "FETCH_CHATS_SUCCESS";

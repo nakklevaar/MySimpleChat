@@ -1,12 +1,13 @@
 import "./chat-preview.css";
 
-import Content from "./content";
-import { IChat } from "types/state/chats-page";
-import { IState } from "types/state";
-import { Link } from "react-router-dom";
 import config from "config";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { getOwnId } from "selectors/chats-page";
+import { IState } from "types/state";
+import { IChat } from "types/state/chats-page";
+
+import Content from "./content";
 
 interface IProps {
     chat: IChat;

@@ -11,13 +11,11 @@ import {
     IFetchProfile,
     ProfileAboutActions,
     ProfileFriendsActions,
-    ProfileUserActions
+    ProfileUserActions,
 } from "types/actions/profile-page";
-import { IAction, IUser } from "types/state";
-
-import { IAbout } from "types/state/profile-page";
 import IApiService from "types/services/api-service";
-import { IThunkDispatch } from "types/actions";
+import { IAction, IUser } from "types/state";
+import { IAbout } from "types/state/profile-page";
 
 // About
 

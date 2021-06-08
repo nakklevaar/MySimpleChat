@@ -1,21 +1,21 @@
 import "./current-chat-subpage.css";
 
-import { DefaultPropsTuple, IRequestable, IState, StateStatus } from "types/state";
-import { Dispatch, bindActionCreators } from "redux";
-import { DispatchAction, IThunkDispatch } from "types/actions";
-import { IFetchChat, IFetchChats } from "types/actions/chats-page";
 import { clearTempChat, fetchChat, fetchChats } from "actions/chats-page";
+import { withApiService } from "components/hoc";
+import Loading from "components/loading";
+import { Component } from "react";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import { bindActionCreators, Dispatch } from "redux";
 import { getChatById, getChatList, getTempChat } from "selectors/chats-page";
+import { DispatchAction } from "types/actions";
+import { IFetchChat, IFetchChats } from "types/actions/chats-page";
+import { DefaultPropsTuple, IRequestable, IState, StateStatus } from "types/state";
+import { IChat } from "types/state/chats-page";
 
 import ChatHeader from "./header";
 import ChatHistory from "./history";
 import ChatInput from "./input";
-import { Component } from "react";
-import { IChat } from "types/state/chats-page";
-import Loading from "components/loading";
-import { connect } from "react-redux";
-import { withApiService } from "components/hoc";
-import { withRouter } from "react-router-dom";
 
 type IProps = {
     chat: IChat;

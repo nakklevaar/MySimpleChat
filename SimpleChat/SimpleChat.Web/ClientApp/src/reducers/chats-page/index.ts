@@ -1,13 +1,11 @@
+import _ from "lodash";
+import { getChatList, getChatMessages, getSearchList, getTempChat } from "selectors/chats-page";
 import {
     AnotherActions,
     CHAT_MESSAGE_RECEIVED,
+    ChatPageFetching,
     CLEAR_SEARCH_LIST,
     CLEAR_TEMP_CHAT,
-    ChatPageFetching,
-    ClearTempChat,
-    FETCH_CHATS_FAILURE,
-    FETCH_CHATS_REQUEST,
-    FETCH_CHATS_SUCCESS,
     FETCH_CHAT_FAILURE,
     FETCH_CHAT_MESSAGES_FAILURE,
     FETCH_CHAT_MESSAGES_REQUEST,
@@ -17,19 +15,16 @@ import {
     FETCH_CHAT_SEARCH_REQUEST,
     FETCH_CHAT_SEARCH_SUCCESS,
     FETCH_CHAT_SUCCESS,
-    FETCH_CHAT_USERS_FAILURE,
-    FETCH_CHAT_USERS_REQUEST,
-    FETCH_CHAT_USERS_SUCCESS,
+    FETCH_CHATS_FAILURE,
+    FETCH_CHATS_REQUEST,
+    FETCH_CHATS_SUCCESS,
     ILightMessage,
     MARKED_MESSAGES_RECEIVED,
     POST_FETCH_CHAT_MESSAGE_SUCCESS,
-    POST_MESSAGES_MARK_AS_READ_SUCCESS
+    POST_MESSAGES_MARK_AS_READ_SUCCESS,
 } from "types/actions/chats-page";
-import { ChatType, IChat, IChatPage, IDuoChat, IMessage } from "types/state/chats-page";
 import { IRequestable, IState, IUser, StateStatus } from "types/state";
-import { getChatById, getChatList, getChatMessages, getOwnId, getSearchList, getTempChat } from "selectors/chats-page";
-
-import _ from "lodash";
+import { IChat, IChatPage, IMessage } from "types/state/chats-page";
 
 const initial: IChatPage = {
     chatList: {
@@ -48,28 +43,6 @@ const initial: IChatPage = {
         errors: []
     }
 };
-
-/* class ChatInfo implements IChat {
-    chat: IChat;
-    lastMessage: IMessage;
-    users: IRequestable<IUser[]>;
-    messages: IRequestable<IMessage[]>;
-
-    constructor(chat: IChat, lastMessage: IMessage) {
-        this.chat = chat;
-        this.lastMessage = lastMessage;
-        this.users = {
-           status: StateStatus.Empty,
-            data: [],
-            errors: []
-        };
-        this.messages = {
-           status: StateStatus.Empty,
-            data: [],
-            errors: []
-        };
-    }
-} */
 
 const updateChatsPage = (state: IState | undefined, action: ChatPageFetching | AnotherActions): IChatPage => {
     if (state === undefined) {
@@ -182,34 +155,6 @@ const updateChatsPage = (state: IState | undefined, action: ChatPageFetching | A
                     errors: []
                 }
             };
-        /*         case FETCH_CHAT_USERS_REQUEST:
-                    return {
-                        ...state.chatsPage,
-                        chatList: {
-                            ...getChatList(state),
-                           status: StateStatus.PatchRequested
-                        }
-                    };
-        
-                case FETCH_CHAT_USERS_SUCCESS:
-                    return {
-                        ...state.chatsPage,
-                        chatList: {
-                           status: StateStatus.Loaded,
-                            data: addUsersToChat(state, action.chatUsers),
-                            errors: []
-                        }
-                    };
-        
-                case FETCH_CHAT_USERS_FAILURE:
-                    return {
-                        ...state.chatsPage,
-                        chatList: {
-                           status: StateStatus.Loaded,
-                            data: getChatList(state).data,
-                            errors: action.errors
-                        }
-                    }; */
 
         case FETCH_CHAT_MESSAGES_REQUEST:
             if (getTempChat(state).status !== StateStatus.Empty) {

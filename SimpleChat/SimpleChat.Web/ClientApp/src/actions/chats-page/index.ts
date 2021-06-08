@@ -1,12 +1,10 @@
+import { getChatById, getChatList, getTempChat } from "selectors/chats-page";
 import {
     AnotherActions,
     CHAT_MESSAGE_RECEIVED,
+    ChatPageFetching,
     CLEAR_SEARCH_LIST,
     CLEAR_TEMP_CHAT,
-    ChatPageFetching,
-    FETCH_CHATS_FAILURE,
-    FETCH_CHATS_REQUEST,
-    FETCH_CHATS_SUCCESS,
     FETCH_CHAT_FAILURE,
     FETCH_CHAT_MESSAGES_FAILURE,
     FETCH_CHAT_MESSAGES_REQUEST,
@@ -19,11 +17,14 @@ import {
     FETCH_CHAT_USERS_FAILURE,
     FETCH_CHAT_USERS_REQUEST,
     FETCH_CHAT_USERS_SUCCESS,
+    FETCH_CHATS_FAILURE,
+    FETCH_CHATS_REQUEST,
+    FETCH_CHATS_SUCCESS,
     IChatUsers,
     IFetchChat,
     IFetchChatMessages,
-    IFetchChatSeach,
     IFetchChats,
+    IFetchChatSeach,
     IPostFetchChatMessages,
     IPostMarkMessagesAsRead,
     IUsersMessages,
@@ -32,13 +33,11 @@ import {
     POST_FETCH_CHAT_MESSAGE_SUCCESS,
     POST_MESSAGES_MARK_AS_READ_FAILURE,
     POST_MESSAGES_MARK_AS_READ_SUCCESS,
-    PostChatFetching
+    PostChatFetching,
 } from "types/actions/chats-page";
-import { IChat, IMessage, ISearchTemplate } from "types/state/chats-page";
-import { IRequestable, StateStatus } from "types/state";
-import { getChatById, getChatList, getTempChat } from "selectors/chats-page";
-
 import IApiService from "types/services/api-service";
+import { IRequestable, StateStatus } from "types/state";
+import { IChat, IMessage, ISearchTemplate } from "types/state/chats-page";
 
 const chatsRequested = (): ChatPageFetching => {
     return {

@@ -1,13 +1,12 @@
-import { ChatType, IChat, IDuoChat, IMessage, ISearchTemplate } from "types/state/chats-page";
-import { IChatUsers, ISendMessage, IUsersMessages } from "types/actions/chats-page";
-
-import { IAbout } from "types/state/profile-page";
+import { loadUserAuthDetails } from "actions/user";
+import store from "store";
+import { ISendMessage, IUsersMessages } from "types/actions/chats-page";
 import IApiService from "types/services/api-service";
 import { IAuthService } from "types/services/auth-service";
 import { IUser } from "types/state";
-import { loadUserAuthDetails } from "actions/user";
+import { ChatType, IChat, IDuoChat, IMessage, ISearchTemplate } from "types/state/chats-page";
+import { IAbout } from "types/state/profile-page";
 import { monthNames } from "utils";
-import store from "store";
 
 export default class ApiService implements IApiService {
     private readonly _baseUrl = "https://localhost:5001";

@@ -1,13 +1,13 @@
 import "./chat-list.css";
 
+import { Component } from "react";
+import { connect } from "react-redux";
+import { getChatList } from "selectors/chats-page";
 import { IRequestable, IState, StateStatus } from "types/state";
+import { IChat } from "types/state/chats-page";
 
 import BlurredLoading from "../../blurred-loading";
 import ChatPreview from "./chat-preview";
-import { Component } from "react";
-import { IChat } from "types/state/chats-page";
-import { connect } from "react-redux";
-import { getChatList } from "selectors/chats-page";
 
 let y = 0;
 
