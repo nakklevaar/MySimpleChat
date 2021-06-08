@@ -30,19 +30,21 @@
                     <img src="/img/logo.png">
                 </div>
                 <div class="login-block">
-                    <form asp-action="SignIn" asp-controller="Account" method="post">
+                    <form asp-action="SignIn" asp-controller="Account" method="post" id="form">
                         <div>
                             <div class="login-block__item">
                                 <label>Username</label>
-                                <input type="text" name="login" value="test" />
+                                <input id="username" type="text" name="login" />
                             </div>
                             <div class="login-block__item">
                                 <label>Password</label>
-                                <input type="password" name="password" value="test" />
+                                <input id="password" type="password" name="password" />
                             </div>
                             <input type="hidden" name="returnUrl" value="@ViewBag.Url" />
                         </div>
                         <button>Login</button>
+                        <button class="test-log">test1</button>
+                        <button class="test-log">test2</button>
                     </form>
                 </div>
             </div>
@@ -65,5 +67,15 @@
             breakpoint: 1200,
         }]
     }));
+
+    function onClick(e) {
+        document.getElementById("username").value = e.target.innerText;
+        document.getElementById("password").value = "test";
+    }
+
+    const btns = document.getElementsByClassName("test-log");
+    for (let btn of btns) {
+        btn.addEventListener("click", onClick);
+    }
 </script>
 </html>

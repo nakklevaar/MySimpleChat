@@ -162,3 +162,9 @@ body {
         display: none;
     }
 }
+
+button.test-log {
+    padding: 7px; 
+    margin-right: 5px;
+    float: left;
+}

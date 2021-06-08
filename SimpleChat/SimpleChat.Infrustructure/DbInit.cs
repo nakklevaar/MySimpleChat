@@ -31,7 +31,7 @@ namespace SimpleChat.Infrustructure
 
         public static void InitializeDb(this IUserManager manager)
         {
-            manager.CreateUserAsync("1","test", "test@mail.ru", "test").Wait();
+            manager.CreateUserAsync("1","test1", "test@mail.ru", "test").Wait();
             manager.CreateUserAsync("2","test2", "test@mail.ru", "test").Wait();
         }
     }
