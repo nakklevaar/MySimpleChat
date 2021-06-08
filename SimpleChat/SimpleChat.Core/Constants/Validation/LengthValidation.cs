@@ -24,8 +24,8 @@
 
         public static class UserProfile
         {
-            public const int City = 20;
-            public const int Country = 20;
+            public const int City = 40;
+            public const int Country = 40;
         }
     }
 }

@@ -17,7 +17,7 @@ namespace SimpleChat.Infrustructure
             {
                 if (!context.Database.CanConnect())
                 {
-                    logger.LogInformation("Filling data....");
+                    logger.LogInformation("Seeding data....");
                     context.Database.Migrate();
                     var str = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "sqlSeed.sql");
                     var scripts = Regex.Split(str, @"\bGO\b");
@@ -32,7 +32,7 @@ namespace SimpleChat.Infrustructure
         public static void InitializeDb(this IUserManager manager)
         {
             manager.CreateUserAsync("1","test1", "test@mail.ru", "test").Wait();
-            manager.CreateUserAsync("2","test2", "test@mail.ru", "test").Wait();
+            manager.CreateUserAsync("2","test2", "test2@mail.ru", "test").Wait();
         }
     }
 }

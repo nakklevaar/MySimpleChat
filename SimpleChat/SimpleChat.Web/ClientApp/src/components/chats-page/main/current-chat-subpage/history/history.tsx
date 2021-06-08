@@ -1,18 +1,18 @@
 import "./history.css";
 
-import { Component, PureComponent } from "react";
-import { DefaultPropsTuple, IRequestable, IState, StateStatus } from "types/state";
-import { Dispatch, bindActionCreators } from "redux";
-import { IChat, IMessage } from "types/state/chats-page";
-import { IFetchChatMessages, IPostMarkMessagesAsRead } from "types/actions/chats-page";
 import { fetchChatMessages, postMarkMessagesAsRead } from "actions/chats-page";
-import { getChatMessages, getOwnId, getTempChat } from "selectors/chats-page";
-
-import Loading from "components/loading";
-import MessageStack from "./message-stack";
-import { connect } from "react-redux";
 import { withApiService } from "components/hoc";
+import Loading from "components/loading";
+import { Component, PureComponent } from "react";
+import { connect } from "react-redux";
 import { withRouter } from "react-router";
+import { bindActionCreators, Dispatch } from "redux";
+import { getChatMessages, getOwnId, getTempChat } from "selectors/chats-page";
+import { IFetchChatMessages, IPostMarkMessagesAsRead } from "types/actions/chats-page";
+import { DefaultPropsTuple, IRequestable, IState, StateStatus } from "types/state";
+import { IChat, IMessage } from "types/state/chats-page";
+
+import MessageStack from "./message-stack";
 
 let count = 0;
 let h = 0;
@@ -20,13 +20,11 @@ let lock = true;
 let unRead: number[] = [];
 let y = 0;
 
-const scrollBottom = (command?: (ids: number[]) => void, userId?: string) => {
+const scrollBottom = (command: (ids: number[]) => void, userId: string) => {
     setTimeout(() => {
         const height = document.getElementsByClassName("chat-history")[0].clientHeight;
         window.scrollTo(0, height); h = height; y = window.scrollY;
-        if (command && userId) {
-            fillArrayUnreaded(command, userId);
-        }
+        fillArrayUnread(command, userId);
     }, 70);
 };
 
@@ -39,7 +37,7 @@ const scrollToPrevios = () => {
     }, 50);
 };
 
-const SubcribeOnScroll = (fetchMessages: () => void, sendCommand: (ids: number[]) => void, id: number, userId: string) => {
+const SubcribeOnScroll = (fetchMessages: () => void, sendCommand: (ids: number[]) => void, userId: string) => {
     window.onscroll = () => {
         if (window.scrollY === 0) {
             fetchMessages();
@@ -48,13 +46,13 @@ const SubcribeOnScroll = (fetchMessages: () => void, sendCommand: (ids: number[]
         if (lock && y - 100 >= window.scrollY) {
             y = window.scrollY;
             lock = false;
-            fillArrayUnreaded(sendCommand, userId);
+            fillArrayUnread(sendCommand, userId);
             setTimeout(() => lock = true, 500);
         }
     };
 };
 
-const fillArrayUnreaded = (sendCommand: (ids: number[]) => void, userId: string) => {
+const fillArrayUnread = (sendCommand: (ids: number[]) => void, userId: string) => {
     setTimeout(() => {
         for (let i = 0; i < count; i++) {
             const mes = document.getElementsByClassName("message-item")[i] as HTMLElement;
@@ -118,8 +116,7 @@ class HistoryContainer extends Component<IContainerProps> {
             this.props.fetchChatMessages(+this.props.id);
         }
         SubcribeOnScroll(() => this.props.fetchChatMessages(+this.props.id),
-            (ids: number[]) => this.props.postMarkMessagesAsRead(ids, +this.props.id),
-            +this.props.id, this.props.userId);
+            (ids: number[]) => this.props.postMarkMessagesAsRead(ids, +this.props.id), this.props.userId);
 
         count = this.props.messages.data.length;
         scrollBottom((ids: number[]) => this.props.postMarkMessagesAsRead(ids, +this.props.id), this.props.userId);
@@ -127,7 +124,7 @@ class HistoryContainer extends Component<IContainerProps> {
 
     componentDidUpdate(prevProps: IContainerProps) {
         if (this.props.messages.data.length - prevProps.messages.data.length == 1 || prevProps.messages.data.length === 0) {
-            scrollBottom();
+            scrollBottom((ids: number[]) => this.props.postMarkMessagesAsRead(ids, +this.props.id), this.props.userId);
         }
         else if (this.props.messages.data.length - prevProps.messages.data.length !== 0)
             scrollToPrevios();

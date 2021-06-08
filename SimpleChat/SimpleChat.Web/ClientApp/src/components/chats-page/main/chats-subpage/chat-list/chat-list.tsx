@@ -31,7 +31,6 @@ class ChatList extends Component<IProps> {
     }
 }
 
-
 interface IContainerProps {
     chatList: IRequestable<IChat[]>;
 }

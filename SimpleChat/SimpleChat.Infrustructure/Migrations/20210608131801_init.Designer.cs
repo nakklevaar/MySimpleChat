@@ -10,8 +10,8 @@ using SimpleChat.Infrustructure.Data;
 namespace SimpleChat.Infrustructure.Migrations
 {
     [DbContext(typeof(SimpleChatStorageContext))]
-    [Migration("20210607070740_init2")]
-    partial class init2
+    [Migration("20210608131801_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -148,16 +148,20 @@ namespace SimpleChat.Infrustructure.Migrations
             modelBuilder.Entity("SimpleChat.Core.UserProfile", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(15)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(15)");
 
                     b.Property<DateTime>("Birthday")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("City")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
 
                     b.Property<string>("Country")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
 
                     b.HasKey("Id");
 

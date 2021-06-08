@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SimpleChat.Infrustructure.Migrations
 {
-    public partial class init2 : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -27,10 +27,10 @@ namespace SimpleChat.Infrustructure.Migrations
                 name: "UserProfiles",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<string>(type: "varchar(15)", unicode: false, maxLength: 15, nullable: false),
                     Birthday = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Country = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    City = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Country = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: true),
+                    City = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: true)
                 },
                 constraints: table =>
                 {

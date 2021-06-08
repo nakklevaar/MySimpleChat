@@ -18,17 +18,11 @@ namespace SimpleChat.Infrustructure.Data.Configurations
 
             builder
                 .Property(e => e.City)
-                .IsRequired()
                 .HasMaxLength(LengthValidation.UserProfile.City);
 
             builder
                 .Property(e => e.Country)
-                .IsRequired()
                 .HasMaxLength(LengthValidation.UserProfile.Country);
-
-            builder
-                .Property(e => e.Birthday)
-                .IsRequired();
         }
     }
 }
