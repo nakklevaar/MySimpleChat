@@ -8,11 +8,11 @@
 * MS SQL Server
 * NodeJS
 
-### Instalation:
+### Installation:
 1. Clone or download project
 
 2. Install npm packages
-	1. Go to SimpleChat\SimpleChat.Web\ClientApp
-	2. npm install
+	- Go to SimpleChat\SimpleChat.Web\ClientApp
+	- npm install
 
-3. Set multiple projects startup in project solutions (`Web`,`AuthorizationServer`)
+3. Set multiple projects startup in project solution (`Web`,`AuthorizationServer`)
