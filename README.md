@@ -18,6 +18,15 @@
 3. Set multiple projects startup in project solution (`Web`,`AuthorizationServer`)
 
 ### Preview:
-![Profile](https://ibb.co/zH1Hq2C)
-![Chats](https://ibb.co/ftcnLCz)
-![Messages](https://ibb.co/vY7TmfY)
+<details>
+<summary>Profile</summary>
+<img src="https://i.ibb.co/qFzFTgh/11.png"/>
+</details>
+<details>
+<summary>Chats</summary>
+<img src="https://i.ibb.co/vmtQRJ6/22.png"/>
+</details>
+<details>
+<summary>Messages</summary>
+<img src="https://i.ibb.co/m8L2td8/33.png"/>
+</details>
