@@ -16,3 +16,8 @@
 	- npm install
 
 3. Set multiple projects startup in project solution (`Web`,`AuthorizationServer`)
+
+### Preview:
+![Profile](https://ibb.co/zH1Hq2C)
+![Chats](https://ibb.co/ftcnLCz)
+![Messages](https://ibb.co/vY7TmfY)
